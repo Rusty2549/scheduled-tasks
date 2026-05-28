@@ -34,14 +34,14 @@ for birthday in birthdays_today:
     email = birthday["email"]
     personalized = letter.replace("[NAME]", name)
 
-    user_email=os.environ.get("user_email)
-    password = os.environ.get("password")
+    MY_EMAIL=os.environ.get("MY_EMAIL)
+    MY_PASSWORD = os.environ.get("MY_PASSWORD")
 
     connection = smtplib.SMTP("smtp.gmail.com", 587)
     connection.starttls()
-    connection.login(user_email, password)
+    connection.login(MY_EMAIL, MY_PASSWORD)
     connection.sendmail(
-        from_addr=user_email,
+        from_addr=MY_EMAIL,
         to_addrs=email, msg= f"Subject: Happy Birthday!\n\n {personalized}"
     )
     connection.quit()

@@ -34,7 +34,7 @@ for birthday in birthdays_today:
     email = birthday["email"]
     personalized = letter.replace("[NAME]", name)
 
-    MY_EMAIL=os.environ.get("MY_EMAIL)
+    MY_EMAIL=os.environ.get("MY_EMAIL")
     MY_PASSWORD = os.environ.get("MY_PASSWORD")
 
     connection = smtplib.SMTP("smtp.gmail.com", 587)
